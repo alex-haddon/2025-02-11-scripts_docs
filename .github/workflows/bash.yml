@@ -16,4 +16,14 @@ jobs: # specifies the jobs to create
     steps: # actual steps of job
       - name: Check out the repo # this clones the repository and cd's into the right working directory 
         uses: actions/checkout@v4 # already built in action
-        
+
+      - name: Run a command manually
+        run: ls -a
+
+      - name: Run multiple commands
+        run: |
+          pwd
+          ls -a
+
+      - name: Run multiple commands script
+        run: bash scripts/bash.sh
