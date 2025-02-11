@@ -18,7 +18,7 @@ jobs: # specifies the jobs to create
         uses: actions/checkout@v4 # already built in action
 
       - name: Run a command manually
-        run: ls -a
+        run: ls -a # use the run command to write code / uses are pre built code scripts
 
       - name: Run multiple commands
         run: |
