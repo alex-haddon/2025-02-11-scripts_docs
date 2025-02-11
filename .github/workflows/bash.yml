@@ -1,0 +1,19 @@
+name: Run a Bash Command # What shows up in the name of the workflow
+
+on: # Runs automation on following set of commands
+  workflow_dispatch: # means manually run
+  push: # another set of events that might happen is if a push happens to the repository 
+        # another option is ```branches: [main]``` which 
+    paths: # triggers set of steps when there is a change to any listed files 
+      - 'Dockerfile'
+      - .github/workflows/bash.yml # or whatever you named the file
+      - 'conda-linux-64.lock'
+
+jobs: # specifies the jobs to create
+  run_bash_command: # computer title for particular job
+    name: Run a bash command using GitHub Actions # human name of one of the job
+    runs-on: ubuntu-latest # what operating system github will run it on
+    steps: # actual steps of job
+      - name: Check out the repo # this clones the repository and cd's into the right working directory 
+        uses: actions/checkout@v4 # already built in action
+        
